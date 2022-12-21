@@ -1,0 +1,19 @@
+### request for a Name 
+
+GET http://localhost:3000/acquireName
+
+### request for a place with German origin
+POST http://localhost:3000/acquirePlace
+Content-Type: application/json
+
+{
+    "place": "Germany"
+}
+
+### request for a place with English origin
+POST http://localhost:3000/acquirePlace
+Content-Type: application/json
+
+{
+    "place": "England"
+}
