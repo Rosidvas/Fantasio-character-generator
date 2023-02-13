@@ -1,0 +1,105 @@
+html, body{
+  margin: 0;
+}
+.container{
+  margin: 0px;
+  padding: 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100px 420px 500px 100px;
+  grid-template-areas: 
+  "Header Header Header Header"
+  "Map Map Map Map"
+  "mainContent mainContent mainContent mainContent"
+  "Footer Footer Footer Footer";
+}
+
+.header{
+
+    grid-area: Header;   
+    font-family: "JetBrains Mono",monospace;
+    color: whitesmoke;
+    background-color: #331c08;
+}
+
+.TopContent{
+  text-align: center;
+  grid-area: Map;
+  font-family: "JetBrains Mono",monospace;
+  color: whitesmoke;
+  background-color: #ba8137;
+}
+
+.Content{
+  text-align: center;
+  grid-area: mainContent;
+  background-color: #D4A95F;
+  font-family: "JetBrains Mono",monospace;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 150px 350px;
+  grid-template-areas: 
+  "Header Header Header"
+  "Side CenterPanel Side";
+}
+
+.generatedtxt{
+  text-align: fixed;
+  grid-area: CenterPanel;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#fantasyCard{
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#originalTxt{
+  
+  text-align: left;
+  background-color: whitesmoke;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*CSS designs provided from getcsscan.com*/
+#generateBtn{
+  text-align: center;
+  grid-area: Button;
+  align-items: center;
+  appearance: none;
+  background-color: #331c08;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: whitesmoke;
+  cursor: pointer;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+#generateBtn:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+#generateBtn:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+#generateBtn:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.footer{
+  text-align: center;
+  grid-area: Footer;
+  background-color: gray;
+  font-family: "JetBrains Mono",monospace;
+}

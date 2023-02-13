@@ -1,105 +1,179 @@
 
 let originRegion;
+let originHold
 let originCity;
 let i;
+let a
 module.exports = {
 
     async getPlace(req, res){
 
-        
-        if(req.body.place  == 'Germany')
-        {
-            i = Math.floor(Math.random() * places.Germany.length)
-            originRegion = places.Germany[i].Region
-            originCity = places.Germany[i].City
+            i = Math.floor(Math.random() * places.Region.length);
+            originHold = places.Region[i].Hold;
+            originRegion = places.Region[i];
 
-            res.json({
-                Region: originRegion,
-                City: originCity
-            });
-        }
-        else if(req.body.place  == 'England')
-        {
-
-            i = Math.floor(Math.random() * places.England.length)
-            originRegion = places.England[i].Region
-            originCity = places.England[i].City
+            a = Math.floor(Math.random() * places.Region[i].Town.length);
+            originCity = places.Region[i].Town[a].place;
             
+
             res.json({
-                Region: originRegion,
+
+                Hold: originHold,
                 City: originCity
-            });
-        }
-        else{
-            res.json({
-                Region: unknown,
-                City: unknown
-            });
-        }
-
-        const userOrigin = {
-            
-            place: ''
-        }
-        
-        res.send(userOrigin)
-
+            })
     }
     
 }
 
 const places = {
-    Germany:[
+    Region:[
     {
-        Region: 'Duchy of Hesse',
-        City: 'Frankfurt'
+        Hold: 'Argovie',
+        Town: [
+            {
+                place: 'Neu Aarau',
+            },
+            {
+                place: 'Alt Aarau',
+            },
+            {
+                place: 'Grotzka',
+            },
+        ]
     },
     {
-        Region: 'Electorate of Hannover',
-        City: 'Hannover'
+        Hold: 'Aar',
+        Town: [
+            {
+                place: 'Aundau',
+            },
+            {
+                place: 'Zollan',
+            },
+
+        ]
     },
     {
-        Region: 'Prussia',
-        City: 'Berlin'
+        Hold: 'The Kingdom',
+        Town: [
+            {
+                place: 'The Capital',
+            },
+            {
+                place: 'Stanstover',
+            },
+            {
+                place: 'Donvau',
+            },
+            {
+                place: 'Port Fair'
+            },
+            {
+                place: 'Ildera'
+            },
+        ]
     },
     {
-        Region: 'Prussia',
-        City: 'Stettin'
+        Hold: 'East Valia',
+        Town: [
+            {
+                place: 'Port Valen',
+            },
+            {
+                place: 'St Valia',
+            },
+            {
+                place: 'Veldra',
+            },
+            {
+                place: 'Port Valna',
+            },
+        ]
     },
     {
-        Region: 'Prussia',
-        City: 'Potsdam'
+        Hold: 'West Valia',
+        Town: [
+            {
+                place: 'Port Alva',
+            },
+            {
+                place: 'West Valia',
+            },
+           
+        ]
     },
     {
-        Region: 'Saxony',
-        City: 'Leipzig'
+        Hold: 'Principality of Garen',
+        Town: [
+            {
+                place: 'Port Norham',
+            },
+            {
+                place: 'Elben Delta',
+            },
+            {
+                place: 'Ivarstead',
+            },
+        ]
     },
     {
-        Region: 'County of Basel',
-        City: 'Basel'
+        Hold: 'Dunningtian Theocracy',
+        Town: [
+            {
+                place: 'Barden',
+            },
+            {
+                place: 'Callford',
+            },
+            {
+                place: 'Narzul Bur',
+            },
+            {
+                place: 'Bance',
+            },
+            {
+                place: 'Fego',
+            },
+        ]
+    },
+    {
+        Hold: 'Captantarian Empire',
+        Town: [
+            {
+                place: 'Osulimormen',
+            },
+        ]
+    },
+    {
+        Hold: 'Grand Duchy of Leonevechia',
+        Town: [
+            {
+                place: 'Canton',
+            },
+            
+        ]
+    },
+    {
+        Hold: 'Principality of Fiushia',
+        Town: [
+            {
+                place: 'Lepota',
+            },
+            {
+                place: 'Lila',
+            },
+            
+        ]
+    },
+    {
+        Hold: 'Ponzia',
+        Town: [
+            {
+                place: 'Ponzio',
+            },
+        ]
     },
     ],
-    England:[
-        {
-            Region: 'Northumbria',
-            City: 'Newcastle'          
-        },
-        {
-            Region: 'Danelaw',
-            City: 'Doncaster'          
-        },
-        {
-            Region: 'Wessex',
-            City: 'London'          
-        },
-        {
-            Region: 'Mercia',
-            City: 'Buckingham'          
-        },
-        {
-            Region: 'Norfolk',
-            City: 'Norwich'          
-        },
-    ]}
+}
 
 

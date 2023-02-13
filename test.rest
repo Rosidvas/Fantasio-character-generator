@@ -2,18 +2,8 @@
 
 GET http://localhost:3000/acquireName
 
-### request for a place with German origin
-POST http://localhost:3000/acquirePlace
-Content-Type: application/json
+### request for a place
+GET  http://localhost:3000/acquirePlace
 
-{
-    "place": "Germany"
-}
-
-### request for a place with English origin
-POST http://localhost:3000/acquirePlace
-Content-Type: application/json
-
-{
-    "place": "England"
-}
+### request for a skill
+GET  http://localhost:3000/acquireSkill

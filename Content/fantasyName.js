@@ -1,7 +1,7 @@
 
 let firstName;
 let lastName;
-let place;
+let gender;
 
 module.exports = {
 
@@ -10,9 +10,10 @@ module.exports = {
         acquiring()
 
         const generatedName = {
+
             name: firstName,
             lastname: lastName,
-            place: place
+            gender: gender
         }
 
         res.send(generatedName)
@@ -22,118 +23,113 @@ module.exports = {
 
 function acquiring(){
 
-    let i = Math.floor(Math.random() * namelist.Firstname.length);
-    firstName =  namelist.Firstname[i].name;
-    place = namelist.Firstname[i].place;
+    let i = Math.floor(Math.random() * genderlist.Gender.length);
+    gender = genderlist.Gender[i].gender
 
-    if(namelist.Firstname[i].place == 'Germany')
-    {
-        i = Math.floor(Math.random() * namelist.LastnameGer.length)
-        lastName = namelist.LastnameGer[i].lastname
+    if(gender == 'male'){
+        i = Math.floor(Math.random() * namelist.FirstnameMales.length);
+        firstName =  namelist.FirstnameMales[i].name;
     }
-    else if(namelist.Firstname[i].place == 'England')
-    {
-        i = Math.floor(Math.random() * namelist.LastnameEng.length)
-        lastName = namelist.LastnameEng[i].lastname
+    else if (gender == 'female'){
+        i = Math.floor(Math.random() * namelist.FirstnameFemales.length);
+        firstName =  namelist.FirstnameFemales[i].name;
     }
+    
+    i = Math.floor(Math.random() * namelist.Lastname.length)
+    lastName = namelist.Lastname[i].lastname
 
 }
 
+//The Datalist
+
+const genderlist = {
+    Gender: [
+        {
+            gender: 'male'
+        },
+        {
+            gender: 'female'
+        },
+    ]
+}
 
 const namelist = {
-    Firstname:[
+    FirstnameMales:[
     {
-        name: 'Engel',
-        place: 'Germany'
+        name: 'Scelles',
     },
     {
-        name: 'Albert',
-        place: 'Germany'
+        name: 'Raxleon',
     },
     {
-        name:'Erwin',
-        place: 'Germany'
+        name: 'Oritonde',
     },
     {
-        name:'Herman',
-        place: 'Germany'
+        name: 'Clagius',
     },
     {
-        name:'Arnold',
-        place: 'Germany'
+        name: 'Attelian',
     },
     {
-        name:'Adolfus',
-        place: 'Germany'
+        name:'Albeci',
     },
     {
-        name:'Hans',
-        place: 'Germany'
+        name: 'Bellard',
     },
     {
-        name:'Hamilton',
-        place: 'England'
+        name: 'Limoron',
     },
-    {
-        name:'Holden',
-        place: 'England'
-    },
-    {
-        name:'Edison',
-        place: 'England'
-    },
-    {
-        name:'Richard',
-        place: 'England'
-    },
-    {
-        name:'Henry',
-        place: 'England'
-    },
-    
     ],
-    LastnameGer:
+    
+    FirstnameFemales:[
+        {
+            name: 'Sabinu',
+        },
+        {
+            name: 'Frina',
+        },
+        {
+            name: 'Livia',
+        },
+        {
+            name: 'Fjolrin',
+        },
+        {
+            name: 'Haaki',
+        },
+        {
+            name: 'Saeta',
+        },
+        {
+            name: 'Leona',
+        },
+    ],
+    
+    Lastname:
     [
         {
-            lastname: 'Froste'
+            lastname: 'Flavonius'
         },
         {
-            lastname: 'Jäger'
+            lastname: 'Amatius'
         },
         {
-            lastname: 'Weiss'
+            lastname: 'Critiu'
         },
         {
-            lastname: 'Taube'
+            lastname: 'Abitius'
         },
         {
-            lastname: 'Pflüger'
+            lastname: 'Magia'
         },
         {
-            lastname: 'Koch'
+            lastname: 'Popillius'
         },
-
+        {
+            lastname: 'Albinac'
+        },
+        {
+            lastname: 'Choiges'
+        },
     ],    
-    LastnameEng:[       
-    {
-        lastname: 'Buckley'
-    },
-    {
-        lastname: 'Blackbournee'
-    },
-    {
-        lastname: 'Freemane'
-    },
-    {
-        lastname: 'Baxtere'
-    },
-    {
-        lastname: 'Swift'
-    },
-    {
-        lastname: 'Turner'
-    },
-    {
-        lastname: 'Chapman'
-    },]
 }
