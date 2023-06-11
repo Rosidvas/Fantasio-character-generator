@@ -1,6 +1,8 @@
 # Fantasio-character-generator
 using an API to create a character origin
 
+### Description
+This project is my attempt at developing an API using Javascript and Node.js .
 
-
-note: extract node modules for it to work
+### Required in this project
+ * Node.js
